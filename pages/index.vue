@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-tabs v-model="tab" background-color="blue darken-4" grow color="white ">
+    <v-tabs v-model="tab" background-color="blue accent-4" grow color="white ">
       <v-tab v-for="item in items" :key="item.tab" class="tabHeaderFont">
         {{ item.tab }}
       </v-tab>

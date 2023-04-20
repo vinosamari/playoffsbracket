@@ -1,6 +1,10 @@
 <template>
   <v-list two-line>
-    <v-list-item-group v-model="selected" active-class="blue--text" multiple>
+    <v-list-item-group
+      v-model="selected"
+      active-class="blue--text text--accent-4"
+      multiple
+    >
       <v-subheader>Conference Standings</v-subheader>
 
       <template v-for="(item, index) in items">
