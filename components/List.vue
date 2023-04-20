@@ -4,29 +4,24 @@
       v-model="selected"
       active-class="blue--text text--accent-4"
       multiple
+      
     >
       <v-subheader>Conference Standings</v-subheader>
 
       <template v-for="(item, index) in items">
-        <v-list-item :key="item.title">
+        <v-list-item :key="item.TeamID" class="text-left">
           <template v-slot:default="{ active }">
             <v-list-item-content>
-              <v-list-item-title v-text="item.title"></v-list-item-title>
+              <img :src="item.WikipediaLogoUrl" :alt="item.Key">
+              <v-list-item-title> {{ item.Key }}</v-list-item-title>
 
-              <v-list-item-subtitle
-                class="text--primary"
-                v-text="item.headline"
-              ></v-list-item-subtitle>
+              <v-list-item-subtitle class="text--primary">{{
+                item.City
+              }}</v-list-item-subtitle>
 
-              <v-list-item-subtitle
-                v-text="item.subtitle"
-              ></v-list-item-subtitle>
+              <v-list-item-subtitle>{{ item.Name }}</v-list-item-subtitle>
             </v-list-item-content>
 
-            <v-list-item-action>
-              <v-list-item-action-text
-                v-text="item.action"
-              ></v-list-item-action-text>
 
               <v-icon v-if="!active" color="grey lighten-1">
                 mdi-star-outline
@@ -49,38 +44,34 @@ export default {
     selected: [2],
     items: [
       {
-        action: "15 min",
-        headline: "Brunch this weekend?",
-        subtitle: `I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
-        title: "Ali Connors",
-      },
-      {
-        action: "2 hr",
-        headline: "Summer BBQ",
-        subtitle: `Wish I could come, but I'm out of town this weekend.`,
-        title: "me, Scrott, Jennifer",
-      },
-      {
-        action: "6 hr",
-        headline: "Oui oui",
-        subtitle: "Do you have Paris recommendations? Have you ever been?",
-        title: "Sandra Adams",
-      },
-      {
-        action: "12 hr",
-        headline: "Birthday gift",
-        subtitle:
-          "Have any ideas about what we should get Heidi for her birthday?",
-        title: "Trevor Hansen",
-      },
-      {
-        action: "18hr",
-        headline: "Recipe to try",
-        subtitle:
-          "We should eat this: Grate, Squash, Corn, and tomatillo Tacos.",
-        title: "Britta Holt",
+        TeamID: 1,
+        Key: "WAS",
+        Active: true,
+        City: "Washington",
+        Name: "Wizards",
+        LeagueID: 3,
+        StadiumID: 1,
+        Conference: "Eastern",
+        Division: "Southeast",
+        PrimaryColor: "002B5C",
+        SecondaryColor: "E31837",
+        TertiaryColor: "C4CED4",
+        QuaternaryColor: "FFFFFF",
+        WikipediaLogoUrl:
+          "https://upload.wikimedia.org/wikipedia/en/0/02/Washington_Wizards_logo.svg",
+        WikipediaWordMarkUrl: null,
+        GlobalTeamID: 20000001,
+        NbaDotComTeamID: 1610612764,
       },
     ],
   }),
 };
 </script>
+
+<style scoped>
+img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+</style>

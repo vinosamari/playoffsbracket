@@ -79,7 +79,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap");
 .navFont {
   font-family: "Tilt Prism";
-  letter-spacing: 0.7rem;
-  font-size: 2rem;
+  letter-spacing: 5px;
+  color: whitesmoke;
 }
 </style>
